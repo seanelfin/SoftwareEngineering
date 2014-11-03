@@ -1,0 +1,44 @@
+import web
+
+class manager(object)
+
+    def _init_(self,user,pw)
+        db1=web.database(dbn='mysql',db='user',user=user,pw=pw)
+        db2=web.database(dbn='mysql',db='menu',user=user,pw=pw)
+        db3=web.database(dbn='mysql',db='order',user=user,pw=pw)
+        else return none
+    
+    #all the activities for managing user
+    def addUser(self,user)
+        result=db1.insert('user',uname=user.username,pw=user.password)
+        return result
+
+    def searchUser(self,username)
+        result=db1.select('user',where="uname==username")
+        return result
+
+    def updateUser(self,user)
+        
+
+    def deleteUser(self,username)
+        result=db1.delete('user',where="uname==username")
+        return result
+
+    #all the activities for managing menu
+    def addMenuItem(self,MenuItem)
+        result=db2.insert('menu',name=MenuItem.name,description=MenuItem.description,available=MenuItem.available)
+        return result
+
+    def searchMenuItem(self,ItemName)
+        result=db2.search('menu',where"MenuItem.name==ItemName")
+        return result
+
+    def updateMenuItem(self,MenuItem)
+
+    def deleteMenuItem(selt,ItemName)
+        result=db2.delete('menu',where="MenuItem.name=ItemName")
+        return none
+        
+    def viewOrder(self)
+        result=db3.select('order'）
+        return result
